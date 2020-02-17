@@ -10,6 +10,10 @@ public class PetOwner {
      private String petOwnerName;
      private ArrayList<Pet> list = new ArrayList<>();
 
+    public PetOwner() {
+
+    }
+
     public String getPetOwnerName() {
         return petOwnerName;
     }
@@ -32,7 +36,7 @@ public class PetOwner {
      */
     public PetOwner(String name, Pet... pets) {
         this.petOwnerName = name;
-        this.getName();
+
     }
 
     /**

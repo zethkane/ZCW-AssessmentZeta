@@ -18,14 +18,16 @@ public class Dog extends Pet {
      * @param age age of this dog
      */
     public Dog(Integer age) {
-        getPetAge();
+        setPetAge(age);
+        setPetName("Dog name");
     }
 
     /**
      * @param name name of this dog
      */
     public Dog(String name) {
-        getPetName();
+        setPetName(name);
+        setPetAge(0);
 
     }
 

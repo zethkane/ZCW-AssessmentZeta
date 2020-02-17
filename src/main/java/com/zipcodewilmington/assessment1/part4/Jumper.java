@@ -5,11 +5,21 @@ public class Jumper {
     /*
      * Complete the function below.
      */
-    public int jumps(int k, int j) {
+    public int jumps(int k, int j)
+    {
         int count = 0;
-            for (int i = 1; i <= k; i++) {
+        int n = k / j;
+        if(n >= 1){
+            count += n;
+        for (int i = 1; i <= k - (n * j); i++) {
                 count++;
             }
-        return count;
+        if (n < 1){
+            for (int i = 1; i < k; i++) {
+                count++;
+            }
+        }
+
+    }return count;
     }
 }//take the remainder of the difference and continue counting.
