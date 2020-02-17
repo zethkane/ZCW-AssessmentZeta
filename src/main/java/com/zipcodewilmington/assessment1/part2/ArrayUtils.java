@@ -29,18 +29,13 @@ public class ArrayUtils {
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
-       Integer count = 0;
-       Integer[] newArr = new Integer[8];
-       Integer[] arr = new Integer[objectArray.length];
-       System.arraycopy(objectArray, 0 ,arr, 0, objectArray.length);
-        for (int i = 0; i < arr.length ; i++) {
-            if ( arr[i] != objectToRemove){
-                count++;
-                newArr[count] += arr[i];
+        int counter = 0;
+        for (int i = 0; i < objectArray.length ; i++) {
+            if (objectArray[i] != objectToRemove){
+                objectArray[counter++] = objectArray[i];
             }
-
         }
-        return arr;
+        return Arrays.copyOf(objectArray, counter);
     }
 
     /**
@@ -69,10 +64,15 @@ public class ArrayUtils {
      * given two arrays `objectArray` and `objectArrayToAdd`, return an array containing all elements in `objectArray` and `objectArrayToAdd`
      */
     public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
-        Integer [] arr = new Integer[objectArray.length + objectArrayToAdd.length];
+        Object [] arr = new Object[objectArray.length + objectArrayToAdd.length];
 
-        for (int i = 0; i < objectArray.length ; i++) {
+        for (int i = 0; i < objectArray.length; i++) {
+            for(int j = objectArray.length; j < arr.length; j++){
+                arr[j] = objectArrayToAdd[i];
+                arr[i] = objectArray[i];
+
+            }
         }
-        return null;
+        return arr;
     }
 }
