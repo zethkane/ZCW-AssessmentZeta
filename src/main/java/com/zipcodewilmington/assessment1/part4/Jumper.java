@@ -7,9 +7,9 @@ public class Jumper {
      */
     public int jumps(int k, int j) {
         int count = 0;
-            for (int i = j; i <= k; i++) {
-            count++;
+            for (int i = 1; i <= k; i++) {
+                count++;
             }
         return count;
     }
-}
+}//take the remainder of the difference and continue counting.

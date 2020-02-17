@@ -7,11 +7,29 @@ public abstract class Pet implements Animal {
     private String petName;
     private Integer petAge;
 
+    public String getPetName() {
+        return petName;
+    }
+
+    public void setPetName(String petName) {
+        this.petName = petName;
+    }
+
+    public Integer getPetAge() {
+        return petAge;
+    }
+
+    public void setPetAge(Integer petAge) {
+        this.petAge = petAge;
+    }
+
     /**
      * nullary constructor
      * by default, pet has age of 0; name of "";
      */
     public Pet() {
+        String name = "";
+        Integer age = 0;
     }
 
     /**
@@ -58,6 +76,8 @@ public abstract class Pet implements Animal {
      * ensure this instance of `Pet` is added to the owner's composite `pets` list
      */
     public void setOwner(PetOwner newPetOwner) {
+        PetOwner newOwner = new PetOwner(petName);
+        newOwner = newPetOwner;
     }
 
     /**

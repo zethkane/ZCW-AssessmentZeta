@@ -9,6 +9,23 @@ import java.util.ArrayList;
 public class PetOwner {
      private String petOwnerName;
      private ArrayList<Pet> list = new ArrayList<>();
+
+    public String getPetOwnerName() {
+        return petOwnerName;
+    }
+
+    public void setPetOwnerName(String petOwnerName) {
+        this.petOwnerName = petOwnerName;
+    }
+
+    public ArrayList<Pet> getList() {
+        return list;
+    }
+
+    public void setList(ArrayList<Pet> list) {
+        this.list = list;
+    }
+
     /**
      * @param name name of the owner of the Pet
      * @param pets array of Pet object
@@ -69,14 +86,14 @@ public class PetOwner {
      * @return the number of Pet objects stored in this class
      */
     public Integer getNumberOfPets() {
-        return null;
+        return list.size();
     }
 
     /**
      * @return the name property of the Pet
      */
     public String getName() {
-        return null;
+        return this.petOwnerName;
     }
 
     /**
