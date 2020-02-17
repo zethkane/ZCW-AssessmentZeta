@@ -6,6 +6,15 @@ public class Jumper {
      * Complete the function below.
      */
     public int jumps(int k, int j) {
-        return -1;
+        int count = 0;
+        if ( j > k){
+            return 0;
+        }else{
+            for (int i = j; i <= k; i++) {
+            count++;
+
+
+        }}
+        return count;
     }
 }
