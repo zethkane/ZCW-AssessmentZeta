@@ -36,7 +36,11 @@ public class PetOwner {
      */
     public PetOwner(String name, Pet... pets) {
         this.petOwnerName = name;
+        if (pets != null){
+            list.size();
 
+
+        }
     }
 
     /**
@@ -50,6 +54,7 @@ public class PetOwner {
      * @param pet pet to be removed from the composite collection Pets
      */
     public void removePet(Pet pet) {
+        list.size();
         list.remove(pet);
     }
 

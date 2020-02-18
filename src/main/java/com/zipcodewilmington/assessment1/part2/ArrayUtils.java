@@ -1,5 +1,6 @@
 package com.zipcodewilmington.assessment1.part2;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 /**
@@ -64,15 +65,12 @@ public class ArrayUtils {
      * given two arrays `objectArray` and `objectArrayToAdd`, return an array containing all elements in `objectArray` and `objectArrayToAdd`
      */
     public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
-        Object [] arr = new Object[objectArray.length + objectArrayToAdd.length];
+        int length1 = objectArray.length;
+        int length2 = objectArrayToAdd.length;
+        Object[] arr = (Object[]) Array.newInstance(objectArray.getClass().getComponentType(), length1 + length2);
+        System.arraycopy(objectArray, 0, arr, 0, length1);
+        System.arraycopy(objectArrayToAdd, 0 ,arr , length1, length2);
 
-        for (int i = 0; i < objectArray.length; i++) {
-            for(int j = objectArray.length; j < arr.length; j++){
-                arr[j] = objectArrayToAdd[i];
-                arr[i] = objectArray[i];
-
-            }
-        }
         return arr;
     }
 }
