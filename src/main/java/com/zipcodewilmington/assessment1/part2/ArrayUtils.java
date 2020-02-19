@@ -44,8 +44,25 @@ public class ArrayUtils {
      * @return the most frequently occurring object in the array
      * given an array of objects, named `objectArray` return the most frequently occuring object in the array
      */
-    public static Object getMostCommon(Object[] objectArray) {
-        return null;
+    public static Object getMostCommon(Integer[] objectArray) {
+        int curr_count = 0;
+        int most_count = 0;
+        int finalCount = 0;
+        Arrays.sort(objectArray);
+        for (int i = 0; i < objectArray.length; i++) {
+            curr_count = 0;
+            for (int j = 0; j < objectArray.length - 1; j++) {
+                if (objectArray[i] == objectArray[j]){
+                    curr_count++;
+                    if (curr_count > most_count){
+                    most_count = curr_count;
+                    finalCount = objectArray[i];}
+
+                }
+            }
+
+        }
+        return finalCount;
     }
 
 
@@ -54,8 +71,28 @@ public class ArrayUtils {
      * @return the least frequently occurring object in the array
      * given an array of objects, named `objectArray` return the least frequently occuring object in the array
      */
-    public static Object getLeastCommon(Object[] objectArray) {
-        return null;
+    public static Object getLeastCommon(Integer[] objectArray) {
+        int curr_count = 0;
+        int most_count = 1;
+        int finalCount = 0;
+        Arrays.sort(objectArray);
+        for (int i = 0; i < objectArray.length; i++)
+        {
+            curr_count = 0;
+            for (int j = 0; j < objectArray.length; j++)
+            {
+                if (objectArray[i] == objectArray[j])
+                {
+                    curr_count++;
+                }
+            } if (curr_count <= most_count)
+            {
+                most_count = curr_count;
+                finalCount = objectArray[i];
+            }
+
+        }
+        return finalCount;
     }
 
     /**
