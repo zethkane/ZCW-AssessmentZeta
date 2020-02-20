@@ -7,19 +7,19 @@ import java.util.ArrayList;
  * Created by leon on 2/16/18.
  */
 public class PetOwner {
-     private static String petOwnerName;
+     private String petOwnerName;
      private ArrayList<Pet> list = new ArrayList<>();
 
     public PetOwner() {
 
     }
 
-    public static String getPetOwnerName() {
+    public String getPetOwnerName() {
         return petOwnerName;
     }
 
-    public  static void setPetOwnerName(String petOwnerName) {
-        PetOwner.petOwnerName = petOwnerName;
+    public void setPetOwnerName(String petOwnerName) {
+        this.petOwnerName = petOwnerName;
     }
 
     public ArrayList<Pet> getList() {
@@ -31,12 +31,18 @@ public class PetOwner {
     }
 
     public PetOwner(String name, Pet... pets) {
-        petOwnerName = name;
-        if (pets != null){
-            list.size();
-
-
+       this.petOwnerName = name;
+       this.list = new ArrayList();
+       if( pets != null)
+       {
+        for(Pet p: pets)
+        {
+           p.setOwner(this);
+           this.list.add(p);
         }
+       }
+
+
     }
 
 
